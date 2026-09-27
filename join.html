@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1e0f45">
+  <title>Join Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/join.js"></script>
+</head>
+<body class="player">
+  <header class="player-bar" id="player-bar" hidden>
+    <span class="player-name" id="bar-name"></span>
+    <span class="player-score" id="bar-score">0 pts</span>
+  </header>
+
+  <main class="player-main">
+    <section class="screen" id="loading">
+      <div class="center-stack"><div class="spinner" aria-hidden="true"></div><p class="on-dark">Connecting…</p></div>
+    </section>
+
+    <!-- No game code in the link -->
+    <section class="screen" id="code" hidden>
+      <form class="card" id="code-form" autocomplete="off">
+        <div class="logo-shapes" aria-hidden="true"><span>▲</span><span>◆</span><span>●</span><span>■</span></div>
+        <h1>Join a game</h1>
+        <label class="field">
+          <span>Game code</span>
+          <input id="code-input" inputmode="numeric" pattern="[0-9 ]*" maxlength="7" placeholder="6-digit code" required>
+        </label>
+        <p class="form-error" id="code-error" role="alert" hidden></p>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Enter name -->
+    <section class="screen" id="name" hidden>
+      <form class="card" id="name-form" autocomplete="off">
+        <div class="logo-shapes" aria-hidden="true"><span>▲</span><span>◆</span><span>●</span><span>■</span></div>
+        <p class="eyebrow dark">Game <span id="name-code"></span></p>
+        <h1>What's your name?</h1>
+        <label class="field">
+          <span class="sr-only">Your name</span>
+          <input id="name-input" maxlength="20" placeholder="Your name" autocapitalize="words" enterkeyhint="go" required>
+        </label>
+        <p class="form-error" id="name-error" role="alert" hidden></p>
+        <button class="btn btn-primary btn-lg btn-block" id="name-btn" type="submit">Join game</button>
+      </form>
+    </section>
+
+    <!-- Lobby wait -->
+    <section class="screen" id="wait" hidden>
+      <div class="center-stack">
+        <div class="big-emoji bounce" aria-hidden="true">🎉</div>
+        <h1 class="on-dark">You're in, <span id="wait-name"></span>!</h1>
+        <p class="on-dark lead waiting-dots">Waiting for host</p>
+        <p class="on-dark muted-dark">Look at the big screen — the game starts soon.</p>
+      </div>
+    </section>
+
+    <!-- Question -->
+    <section class="screen" id="question" hidden>
+      <div class="p-head">
+        <span class="pill pill-light" id="pq-meta"></span>
+        <span class="p-timer" id="pq-timer" role="timer">2:00</span>
+      </div>
+      <div class="p-progress" aria-hidden="true"><span id="pq-bar"></span></div>
+      <div class="card p-question"><h1 id="pq-text"></h1></div>
+      <div class="answer-grid" id="pq-options"></div>
+    </section>
+
+    <!-- Answer locked -->
+    <section class="screen" id="answered" hidden>
+      <div class="center-stack">
+        <div class="big-check" aria-hidden="true">✓</div>
+        <h1 class="on-dark">Answer submitted</h1>
+        <div class="chosen" id="pa-choice"></div>
+        <p class="on-dark lead waiting-dots">Waiting for the others</p>
+        <p class="on-dark muted-dark"><span id="pa-timer"></span> left</p>
+      </div>
+    </section>
+
+    <!-- Time up without answering -->
+    <section class="screen" id="timeup" hidden>
+      <div class="center-stack">
+        <div class="big-emoji" aria-hidden="true">⏰</div>
+        <h1 class="on-dark">Time's up!</h1>
+        <p class="on-dark lead waiting-dots">Revealing the answer</p>
+      </div>
+    </section>
+
+    <!-- Reveal -->
+    <section class="screen" id="reveal" hidden>
+      <div class="result-banner" id="pr-banner">
+        <div class="result-icon" id="pr-icon"></div>
+        <h1 id="pr-title"></h1>
+        <p class="result-points" id="pr-points"></p>
+      </div>
+      <div class="card p-reveal">
+        <p class="eyebrow dark">Correct answer</p>
+        <div class="correct-answer" id="pr-correct"></div>
+        <p class="your-answer" id="pr-yours" hidden></p>
+        <h3>Why?</h3>
+        <p id="pr-expl"></p>
+      </div>
+      <p class="standing on-dark" id="pr-standing"></p>
+    </section>
+
+    <!-- Round end -->
+    <section class="screen" id="roundend" hidden>
+      <div class="center-stack top">
+        <p class="eyebrow">Round complete</p>
+        <h1 class="on-dark" id="pre-title"></h1>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><span>This round</span><strong id="pre-round"></strong><em id="pre-round-rank"></em></div>
+        <div class="stat"><span>Overall</span><strong id="pre-total"></strong><em id="pre-total-rank"></em></div>
+      </div>
+      <div class="card list-card">
+        <h3>Overall top 5</h3>
+        <ol class="lb" id="pre-top"></ol>
+      </div>
+      <p class="on-dark muted-dark center-text waiting-dots">Waiting for host</p>
+    </section>
+
+    <!-- Final -->
+    <section class="screen" id="final" hidden>
+      <div class="center-stack top">
+        <p class="eyebrow">Game over</p>
+        <div class="final-rank" id="pf-rank"></div>
+        <p class="on-dark lead" id="pf-of"></p>
+        <p class="final-points" id="pf-points"></p>
+      </div>
+      <div class="mini-podium" id="pf-podium"></div>
+      <div class="card list-card">
+        <h3>Your rounds</h3>
+        <ul class="round-breakdown" id="pf-rounds"></ul>
+      </div>
+    </section>
+
+    <!-- Full / not found / removed / closed -->
+    <section class="screen" id="message" hidden>
+      <div class="card center-text">
+        <div class="big-emoji" id="msg-icon" aria-hidden="true"></div>
+        <h1 id="msg-title"></h1>
+        <p class="muted" id="msg-text"></p>
+        <button class="btn btn-primary btn-block" id="msg-btn" type="button" hidden></button>
+      </div>
+    </section>
+
+    <section class="screen" id="fatal" hidden>
+      <div class="card center-text">
+        <h1>Something went wrong</h1>
+        <p class="muted" data-msg></p>
+        <button class="btn btn-primary btn-block" type="button" onclick="location.reload()">Try again</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

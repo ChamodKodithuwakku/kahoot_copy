@@ -1,0 +1,10 @@
+# Lecture decks are ~600 MB and not needed by the site
+*.pptx
+*.pdf
+lectures/
+
+# Local tooling
+node_modules/
+.firebase/
+.claude/
+*.log

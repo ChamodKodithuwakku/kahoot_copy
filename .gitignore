@@ -1,0 +1,11 @@
+# Lecture decks: too large for GitHub (100 MB per-file limit)
+*.pptx
+*.pdf
+lectures/
+
+# Local tooling
+node_modules/
+.firebase/
+.vercel/
+.claude/
+*.log

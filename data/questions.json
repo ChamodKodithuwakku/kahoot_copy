@@ -1,0 +1,460 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "title": "Laws of Computing",
+      "questions": [
+        {
+          "id": "r1q1",
+          "question": "According to the lecture's definition, emerging technologies are those developing now or expected over roughly which time frame?",
+          "options": ["The next 1–2 years", "The next 5–10 years", "The next 25–50 years", "Only those invented in the past decade"],
+          "correct": 1,
+          "explanation": "The definition quoted in the lecture describes emerging technologies as new technologies currently developing or to be developed over the next five to ten years. They are expected to substantially alter the business and social environment."
+        },
+        {
+          "id": "r1q2",
+          "question": "When screening a research source, what should you read first?",
+          "options": ["Only the reference list", "The full paper from start to finish", "The title, abstract, introduction and conclusion", "The acknowledgements and appendices"],
+          "correct": 2,
+          "explanation": "The lecture's first step for finding information is to screen a source by reading its title, abstract, introduction and conclusion. You only read the full paper in the second step if it turns out to be relevant."
+        },
+        {
+          "id": "r1q3",
+          "question": "Who defined AI as \"the science and engineering of making intelligent machines, especially intelligent computer programs\"?",
+          "options": ["John McCarthy", "Alan Turing", "Gordon Moore", "Ray Kurzweil"],
+          "correct": 0,
+          "explanation": "This definition comes from John McCarthy, who also coined the term 'Artificial Intelligence' in 1956. The lecture uses it to introduce advances in AI as a key technology trend."
+        },
+        {
+          "id": "r1q4",
+          "question": "Compared with plant protein, producing a pound of meat protein with Western industrial methods needs how much more water?",
+          "options": ["About the same amount", "2 to 3 times more", "4 to 25 times more", "100 to 200 times more"],
+          "correct": 2,
+          "explanation": "The lecture states meat protein needs 4 to 25 times more water, 6 to 17 times more land and 6 to 20 times more fossil fuels than plant protein. That environmental cost is why lab-grown and plant-based 'meat-free burgers' are an emerging technology."
+        },
+        {
+          "id": "r1q5",
+          "question": "ENIAC, completed in 1945, is described in the lecture as the first…",
+          "options": ["Commercially sold personal computer", "Programmable, electronic, general-purpose digital computer", "Computer to use integrated circuits", "Computer connected to the internet"],
+          "correct": 1,
+          "explanation": "ENIAC (Electronic Numerical Integrator and Computer) was the first programmable, electronic, general-purpose digital computer. The lecture uses it as the starting point for showing how dramatically computing power has grown since."
+        },
+        {
+          "id": "r1q6",
+          "question": "Ray Kurzweil's Law of Accelerating Returns predicts computers will surpass the brainpower of all human brains combined by around which year?",
+          "options": ["2025", "2030", "2035", "2045"],
+          "correct": 3,
+          "explanation": "The Acceleration chart shows Kurzweil's Law of Accelerating Returns, where computing power per $1,000 grows exponentially. It projects computers surpassing one human brain around 2023 and all human brains combined around 2045."
+        },
+        {
+          "id": "r1q7",
+          "question": "Moore's Law, first described by Gordon Moore in 1965, states that…",
+          "options": ["Network value grows with the square of its users", "Transistor density doubles about every two years", "Bandwidth grows three times faster than computing power", "Processor clock speed halves every year"],
+          "correct": 1,
+          "explanation": "Moore's Law began as an observation and forecast in Electronics magazine in 1965. Its main concept is that the density of transistors on a chip doubles about every two years, driving steady growth in computing power."
+        },
+        {
+          "id": "r1q8",
+          "question": "Metcalfe's Law says the value of a network is proportional to…",
+          "options": ["The number of servers on the network", "The bandwidth of each connection", "The speed of its fastest computer", "The square of the number of nodes"],
+          "correct": 3,
+          "explanation": "Robert Metcalfe, inventor of Ethernet, proposed in 1980 that a network's value grows with the square of the number of connected nodes. This is why the internet becomes dramatically more useful as more people join."
+        },
+        {
+          "id": "r1q9",
+          "question": "Using the connection counts from the Metcalfe's Law slides, how many connections do 10 computers make?",
+          "options": ["10", "20", "45", "100"],
+          "correct": 2,
+          "explanation": "Each pair of computers forms one connection, so n computers make n(n−1)/2 connections: 10 × 9 ÷ 2 = 45. The lecture also shows 100 computers creating almost 5,000 connections."
+        },
+        {
+          "id": "r1q10",
+          "question": "Gilder's Law (George Gilder, 1997) states that…",
+          "options": ["Bandwidth grows at least three times faster than computer power", "Computing power doubles every 18 months", "The cost of storage halves every year", "Network value equals the number of users"],
+          "correct": 0,
+          "explanation": "Gilder's Law says communication bandwidth grows at least three times faster than computer power. In practice, telecommunications bandwidth doubles roughly every 6 to 9 months."
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "title": "Modern Day Computing: Cloud & Quantum",
+      "questions": [
+        {
+          "id": "r2q1",
+          "question": "Which description best matches cloud computing as defined in the lecture?",
+          "options": ["On-demand delivery of IT resources over the internet with pay-as-you-go pricing", "Buying and maintaining your own data centre and servers", "Storing all files on a single local hard drive", "A private network that cannot be accessed remotely"],
+          "correct": 0,
+          "explanation": "Cloud computing is the on-demand delivery of IT resources such as computing power, storage and databases over the internet, paid for as you use them. Users avoid the capital cost of buying, owning and maintaining physical data centres and servers."
+        },
+        {
+          "id": "r2q2",
+          "question": "Which cloud service model gives the highest level of flexibility and provides networking, computers and data storage?",
+          "options": ["SaaS", "PaaS", "IaaS", "Hybrid cloud"],
+          "correct": 2,
+          "explanation": "Infrastructure as a Service (IaaS) provides the basic building blocks of cloud IT: networking, computers and storage. It offers the most flexibility and is closest to the IT resources developers already know; examples include AWS and Rackspace."
+        },
+        {
+          "id": "r2q3",
+          "question": "Google App Engine, which lets developers deploy apps without managing the underlying infrastructure, is an example of…",
+          "options": ["Infrastructure as a Service", "Platform as a Service", "Software as a Service", "A private cloud"],
+          "correct": 1,
+          "explanation": "Platform as a Service (PaaS) removes the need to manage infrastructure so you can focus on deploying and managing your applications. The lecture lists Google App Engine and Windows Azure Platform as PaaS examples."
+        },
+        {
+          "id": "r2q4",
+          "question": "A deployment that combines on-premises systems, a private cloud and public cloud services is called a…",
+          "options": ["Public cloud", "Private cloud", "Edge cloud", "Hybrid cloud"],
+          "correct": 3,
+          "explanation": "A hybrid cloud mixes on-premises, private cloud and public cloud services. This gives organisations more flexibility and helps them optimise both infrastructure and security."
+        },
+        {
+          "id": "r2q5",
+          "question": "What is described as the main enabler of cloud computing?",
+          "options": ["Virtualization", "Quantum entanglement", "Blockchain", "Fibre-optic cables"],
+          "correct": 0,
+          "explanation": "Virtualization partitions a single physical server into multiple logical servers, each of which behaves like an independent physical machine. This lets cloud providers share hardware among many customers efficiently."
+        },
+        {
+          "id": "r2q6",
+          "question": "Which of these is NOT one of the five key cloud attributes?",
+          "options": ["Broad network access", "Metered by use", "Dedicated hardware with fixed capacity", "On-demand self-service"],
+          "correct": 2,
+          "explanation": "The five key attributes are shared/pooled resources, broad network access, on-demand self-service, scalable and elastic, and metered by use. Dedicated hardware with fixed capacity describes conventional computing, not cloud computing."
+        },
+        {
+          "id": "r2q7",
+          "question": "In 1982, who proposed building machines based on the laws of quantum mechanics instead of classical physics?",
+          "options": ["Albert Einstein", "Peter Shor", "Alan Turing", "Richard Feynman"],
+          "correct": 3,
+          "explanation": "Richard Feynman proposed in 1982 that computers could be built on quantum mechanics rather than classical physics. This idea is the foundation of modern quantum computing."
+        },
+        {
+          "id": "r2q8",
+          "question": "What does superposition allow a qubit to do?",
+          "options": ["Represent 0 and 1 (and states in between) at the same time", "Store exactly one fixed value that is always known", "Copy itself to other qubits instantly", "Run at a higher clock speed than a transistor"],
+          "correct": 0,
+          "explanation": "Unlike a classical bit, which is either 0 or 1, a qubit in superposition can represent 0, 1 and everything in between simultaneously. Its state stays indeterminate until it is measured."
+        },
+        {
+          "id": "r2q9",
+          "question": "When two particles share the same quantum state, so their properties stay linked even when separated, this is called…",
+          "options": ["Superposition", "Entanglement", "Virtualization", "Quantum uncertainty"],
+          "correct": 1,
+          "explanation": "Entanglement (quantum nonlocality) occurs when particles share the same quantum state, so properties such as spin stay related. Even when the particles are moved apart, they continue to share those properties."
+        },
+        {
+          "id": "r2q10",
+          "question": "Shor's algorithm (1994) makes quantum computers a threat to RSA encryption because it can efficiently…",
+          "options": ["Search unsorted databases", "Factorize large integer numbers", "Model protein molecules", "Compress large files"],
+          "correct": 1,
+          "explanation": "Peter Shor's 1994 algorithm factorizes large integers far faster than classical methods, and RSA's security depends on factorization being hard. Grover's 1995 algorithm is the one for quantum search."
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "title": "3D Printing",
+      "questions": [
+        {
+          "id": "r3q1",
+          "question": "The Second Industrial Revolution is most associated with…",
+          "options": ["Mechanization of the textile industry with steam power", "Henry Ford's moving assembly line and mass production", "Partial automation using programmable controls and computers", "Cyber-physical systems and smart factories"],
+          "correct": 1,
+          "explanation": "The Second Industrial Revolution brought electricity and the moving assembly line, which Henry Ford mastered to start the age of mass production. The first revolution was textile mechanization with steam, and the third was digital automation from the 1970s."
+        },
+        {
+          "id": "r3q2",
+          "question": "Industry 4.0 is characterized by…",
+          "options": ["Steam engines powering textile mills", "The first moving assembly lines", "The first personal computers", "Networked cyber-physical systems in smart factories"],
+          "correct": 3,
+          "explanation": "Industry 4.0 connects computerised production systems to networks and gives them digital twins, creating cyber-physical production systems. In these smart factories, machines, components and people communicate and production is nearly autonomous."
+        },
+        {
+          "id": "r3q3",
+          "question": "Which of these is an example of subtractive manufacturing?",
+          "options": ["Milling", "Powder-bed fusion", "Wire extrusion", "Material deposition"],
+          "correct": 0,
+          "explanation": "Subtractive manufacturing removes material from a solid block using processes such as milling, turning, grinding, water-jet cutting and sawing. Additive manufacturing (3D printing) instead builds the object by adding layers, producing far less waste."
+        },
+        {
+          "id": "r3q4",
+          "question": "In the 3D printing workflow, what does the slicing step produce for the printer to execute?",
+          "options": ["An STL file", "G-code", "A 3D CAD sketch", "A bitmap image"],
+          "correct": 1,
+          "explanation": "The workflow runs 3D model → STL file → slicing → 3D printer → 3D object. The slicer cuts the model into layers and outputs G-code, the machine instructions that tell the printer how to move and extrude."
+        },
+        {
+          "id": "r3q5",
+          "question": "How does Fused Deposition Modeling (FDM / FFF) build a model?",
+          "options": ["Solid filament is heated and fed through a moving extruder", "A laser fuses layers of powder", "Light cures a tray of liquid resin", "A rotating cutter carves a solid block"],
+          "correct": 0,
+          "explanation": "In FDM, solid filament is heated and pushed through an extruder while motors move the extruder and build plate in three directions. Overhanging parts of the model may need support material."
+        },
+        {
+          "id": "r3q6",
+          "question": "Which 3D printing process uses light to cure liquid resin, with the build plate raising the model out layer by layer?",
+          "options": ["Selective Laser Sintering (SLS)", "Fused Deposition Modeling (FDM)", "Stereolithography (SLA)", "Subtractive machining"],
+          "correct": 2,
+          "explanation": "Stereolithography (SLA) directs light through a transparent tray to harden liquid resin, one layer at a time. SLS, by contrast, uses a laser to heat powder to its melting point, and the build plate lowers as each new powder layer is added."
+        },
+        {
+          "id": "r3q7",
+          "question": "Which filament is recommended for outdoor parts because of its high UV, temperature and impact resistance?",
+          "options": ["PETG", "Nylon", "Carbon fiber filled", "ASA"],
+          "correct": 3,
+          "explanation": "ASA is a common alternative to ABS and suits outdoor use thanks to its high UV, temperature and impact resistance. PETG is known for easy printing and water resistance, nylon for toughness, and carbon-fiber-filled filaments for strength and stiffness."
+        },
+        {
+          "id": "r3q8",
+          "question": "How did the start-up Pembient propose using 3D printing to help save rhinos?",
+          "options": ["Printing prosthetic horns for injured rhinos", "Printing cheap horns from keratin and rhino DNA to undercut poachers", "Printing GPS trackers to attach to rhinos", "Printing fences for wildlife reserves"],
+          "correct": 1,
+          "explanation": "Pembient 3D prints replica horns from keratin and rhino DNA that carry the same genetic fingerprint as real horn. Selling them at about one-eighth of the price aims to price poachers out of the market."
+        },
+        {
+          "id": "r3q9",
+          "question": "Which food does the lecture describe as already easily 3D printable?",
+          "options": ["Chocolate", "Fresh salad", "Soup", "Ice cubes"],
+          "correct": 0,
+          "explanation": "The Food Industries slide notes that chocolate is already easily 3D printable, and food printing mostly focuses on edible pastries. Other applications include medical bioprinting of tissues and organoids, and even a drivable 3D-printed car."
+        },
+        {
+          "id": "r3q10",
+          "question": "What makes 4D printing different from 3D printing?",
+          "options": ["It prints four objects at once", "It uses four print nozzles to go faster", "The printed object changes shape in response to stimuli like heat or light", "It adds colour as a fourth dimension"],
+          "correct": 2,
+          "explanation": "In 4D printing, a 3D-printed object made from smart materials transforms into another structure when exposed to external energy such as temperature or light. Time is the fourth dimension, enabling ideas like self-repairing pipes and self-assembling furniture."
+        }
+      ]
+    },
+    {
+      "round": 4,
+      "title": "Modern Artificial Intelligence",
+      "questions": [
+        {
+          "id": "r4q1",
+          "question": "The 'Mechanical Turk' of 1770, shown as an example of AI before computers, appeared to be a machine that could…",
+          "options": ["Do arithmetic", "Translate languages", "Play chess", "Weave cloth"],
+          "correct": 2,
+          "explanation": "The Mechanical Turk (1770) was a chess-playing machine that seemed intelligent to audiences of its time. Along with Pascal's mechanical calculator (1642), it shows that the idea of thinking machines predates computers."
+        },
+        {
+          "id": "r4q2",
+          "question": "In the wish-list of intelligence characteristics, 'formulating sequences of actions to accomplish goals' describes…",
+          "options": ["Perception", "Planning", "Communication", "Action"],
+          "correct": 1,
+          "explanation": "Planning is the formulation of plans: sequences or agendas of actions to accomplish goals. The other characteristics are perception (interpreting sensor data), action (using effectors), reasoning, learning and communication."
+        },
+        {
+          "id": "r4q3",
+          "question": "In the Turing Test (1950), a computer passes if…",
+          "options": ["It beats a grandmaster at chess", "It solves logic puzzles faster than a human", "It correctly recognises human faces", "The interrogator cannot tell its written answers from a human's"],
+          "correct": 3,
+          "explanation": "In Alan Turing's test, a human interrogator puts written questions to a human and a computer. If the interrogator cannot tell which responses came from the computer, it passes; this is the 'acting humanly' approach to AI."
+        },
+        {
+          "id": "r4q4",
+          "question": "Which field brings together AI computer models and psychology experiments to build testable theories of the human mind?",
+          "options": ["Cognitive science", "Robotics", "Computer vision", "Cryptography"],
+          "correct": 0,
+          "explanation": "Cognitive science underpins the 'thinking humanly' approach. It combines AI models with psychological experiments, introspection and brain imaging to understand how humans think."
+        },
+        {
+          "id": "r4q5",
+          "question": "The 'thinking rationally' approach traces back to Aristotle's attempt to codify right thinking using…",
+          "options": ["Neural networks", "Syllogisms (deductive reasoning)", "Probability tables", "The Turing Test"],
+          "correct": 1,
+          "explanation": "Aristotle's syllogisms, where a major and a minor premise lead to a conclusion, embody deductive reasoning and the start of logic. By 1965, programs existed that could in principle solve any problem expressed in logic."
+        },
+        {
+          "id": "r4q6",
+          "question": "In AI, what does being 'rational' mean?",
+          "options": ["Thinking exactly like a human brain", "Showing human-like emotions", "Maximizing expected utility to achieve pre-defined goals", "Never making a single mistake"],
+          "correct": 2,
+          "explanation": "In AI, 'rational' means maximally achieving pre-defined goals, where goals are expressed as the utility of outcomes. Rationality concerns only which decisions are made, not the thought process behind them."
+        },
+        {
+          "id": "r4q7",
+          "question": "In the PEAS description of a rational agent, what does the 'A' stand for?",
+          "options": ["Actuators", "Algorithms", "Accuracy", "Autonomy"],
+          "correct": 0,
+          "explanation": "PEAS stands for Performance measure, Environment, Actuators and Sensors. Actuators are the tools an agent uses to act on its environment, while sensors are how it perceives that environment."
+        },
+        {
+          "id": "r4q8",
+          "question": "According to the lecture, what does the brain teach us about good decision making?",
+          "options": ["Emotions should be removed entirely", "Speed matters more than accuracy", "Only rules written by experts matter", "Memory (data) and simulation (computation) are key"],
+          "correct": 3,
+          "explanation": "Brains are very good, though not perfect, at making rational decisions. The key lessons are that memory (data) and simulation (computation) drive good decisions, which is why AI focuses on rational behaviour rather than copying the brain."
+        },
+        {
+          "id": "r4q9",
+          "question": "In 1997, IBM's Deep Blue made history by competing against…",
+          "options": ["Jeopardy! champions", "A Go world champion", "Chess champion Garry Kasparov", "A self-driving car"],
+          "correct": 2,
+          "explanation": "The AI timeline shows IBM's Deep Blue competing against world chess champion Garry Kasparov in 1997. A later milestone was IBM Watson competing on the US quiz show Jeopardy! in 2011."
+        },
+        {
+          "id": "r4q10",
+          "question": "Converting spoken words into text is known as…",
+          "options": ["Text-to-speech synthesis (TTS)", "Automatic speech recognition (ASR)", "Computer vision", "Machine translation"],
+          "correct": 1,
+          "explanation": "Automatic speech recognition (ASR) turns speech into text and is part of AI's speech technology field. Text-to-speech (TTS) does the reverse, and both sit alongside language tasks like question answering and machine translation."
+        }
+      ]
+    },
+    {
+      "round": 5,
+      "title": "Blockchain & Metaverse",
+      "questions": [
+        {
+          "id": "r5q1",
+          "question": "In blockchain, what does 'immutable' mean?",
+          "options": ["Data can be edited by any node", "Data cannot be altered", "Data is deleted after each block", "Data is stored on one central server"],
+          "correct": 1,
+          "explanation": "A blockchain is a distributed ledger shared among a network's nodes, and it can make data in any industry immutable. Immutable means the recorded data cannot be altered once written."
+        },
+        {
+          "id": "r5q2",
+          "question": "What is the purpose of proof-of-work (mining)?",
+          "options": ["Validating blocks by solving cryptographic puzzles", "Speeding up transactions by skipping validation", "Converting cryptocurrency into cash", "Storing backups of the blockchain offline"],
+          "correct": 0,
+          "explanation": "Transactions are initiated, held in a memory pool, and grouped into a block that must be validated. Proof-of-work (mining) validates blocks by solving cryptographic puzzles, which protects the integrity of the chain."
+        },
+        {
+          "id": "r5q3",
+          "question": "Why can't a single node change a record in a decentralized blockchain?",
+          "options": ["Only admins know the encryption password", "A central bank must approve every change", "Other nodes with copies of the ledger prevent the change", "Records are deleted after 24 hours"],
+          "correct": 2,
+          "explanation": "Blockchain distributes the data across many nodes, giving redundancy and data fidelity. If one copy is altered, the other nodes prevent it, so no single node can unilaterally change the stored information."
+        },
+        {
+          "id": "r5q4",
+          "question": "Which statement about Bitcoin and blockchain is TRUE?",
+          "options": ["Blockchain and Bitcoin are the same thing", "Bitcoin can work without a blockchain", "Blockchain can only record cryptocurrency transactions", "Blockchain is a ledger technology not limited to Bitcoin"],
+          "correct": 3,
+          "explanation": "Bitcoin is a decentralized digital currency, while blockchain is the distributed ledger technology that records its transactions. Bitcoin cannot work without a blockchain, but blockchain can record transactions for many uses beyond Bitcoin."
+        },
+        {
+          "id": "r5q5",
+          "question": "How do retailers use blockchain in luxury resale?",
+          "options": ["Using NFTs to certify that products are authentic", "Replacing physical shops with virtual shops", "Lowering product prices automatically", "Tracking employees' working hours"],
+          "correct": 0,
+          "explanation": "Retailers use blockchain-based NFTs to engage customers and certify that luxury resale products are authentic. This builds trust and transparency, much as blockchain enables real-time transactions and smart contracts in financial services."
+        },
+        {
+          "id": "r5q6",
+          "question": "Different blockchain protocols struggling to interact with each other is which limitation?",
+          "options": ["Scalability challenges", "Energy consumption", "Interoperability hurdles", "Regulatory uncertainty"],
+          "correct": 2,
+          "explanation": "Interoperability hurdles arise because diverse blockchain protocols struggle to work together, limiting data integration. The other limitations are scalability (limited transaction throughput), energy use (especially Bitcoin mining) and regulatory uncertainty."
+        },
+        {
+          "id": "r5q7",
+          "question": "The term 'Metaverse' was first introduced by Neal Stephenson in which 1992 book?",
+          "options": ["Neuromancer", "Snow Crash", "Ready Player One", "Brave New World"],
+          "correct": 1,
+          "explanation": "Neal Stephenson coined 'Metaverse' in his 1992 novel Snow Crash. The word combines 'meta-' meaning beyond and 'verse' from universe."
+        },
+        {
+          "id": "r5q8",
+          "question": "According to the lecture, what is the primary goal of the Metaverse?",
+          "options": ["Mining cryptocurrency", "Replacing the internet entirely", "Storing government records", "Facilitating social interaction"],
+          "correct": 3,
+          "explanation": "The Metaverse's primary goal is to facilitate social interaction through permanent virtual worlds, blockchain and augmented reality. Users are represented by digital avatars and can replicate real-life activities, including owning digital assets."
+        },
+        {
+          "id": "r5q9",
+          "question": "Which of these is listed as an 'access device' technology for the Metaverse?",
+          "options": ["AR, VR and mixed reality devices", "5G and 6G networks", "Blockchain-based marketplaces", "Content delivery protocols"],
+          "correct": 0,
+          "explanation": "The lecture groups Metaverse technologies into high-speed networks (5G/6G), access devices (AR, VR and mixed reality), diverse protocols, and blockchain-based marketplaces. Access devices are what let users experience the virtual world immersively."
+        },
+        {
+          "id": "r5q10",
+          "question": "What does the lecture say accelerated the adoption of metaverse-related tools in healthcare, business and education?",
+          "options": ["The 2008 financial crisis", "The launch of Bitcoin", "The pandemic", "The first smartphone"],
+          "correct": 2,
+          "explanation": "The Future of Metaverse slide notes that the pandemic accelerated the adoption of cutting-edge tools in healthcare, business and education. It also predicts user numbers will rise significantly by 2040, fuelled by the potential of AR and VR."
+        }
+      ]
+    },
+    {
+      "round": 6,
+      "title": "Internet of Things",
+      "questions": [
+        {
+          "id": "r6q1",
+          "question": "What is a smart city?",
+          "options": ["A city with the most smartphones per person", "An urban area where technology and data collection help improve quality of life", "A city run entirely by robots", "A city that has banned cars"],
+          "correct": 1,
+          "explanation": "A smart city is an urban area that uses technology and data collection to improve quality of life. Sensors collect electronic data so resources can be managed more efficiently, which is why the lecture is titled 'Towards Sensing City'."
+        },
+        {
+          "id": "r6q2",
+          "question": "Who coined the term 'Internet of Things' in 1999?",
+          "options": ["Kevin Ashton", "Tim Berners-Lee", "Robert Metcalfe", "Gordon Moore"],
+          "correct": 0,
+          "explanation": "Kevin Ashton, known as the father of IoT, coined 'Internet of Things' in 1999. He described IoT as empowering computers to see, hear and smell the world for themselves."
+        },
+        {
+          "id": "r6q3",
+          "question": "Cyber-physical systems (CPS) are best described as systems that…",
+          "options": ["Exist only in virtual reality", "Are purely mechanical with no software", "Replace sensors with human operators", "Integrate hardware and software to bring physical and virtual worlds together"],
+          "correct": 3,
+          "explanation": "In CPS, software and hardware are seamlessly integrated to perform well-defined tasks. CPS converges different technologies on top of interconnected things, bringing the physical and virtual worlds together."
+        },
+        {
+          "id": "r6q4",
+          "question": "According to the lecture, what turns a physical object into an IoT device?",
+          "options": ["Adding a touchscreen", "Connecting it to the internet so it can be controlled or share information", "Making it battery powered", "Printing a QR code on it"],
+          "correct": 1,
+          "explanation": "Any physical object becomes an IoT device if it can be connected to the internet to be controlled or to communicate information. Physical object + controller, sensors and actuators + internet = Internet of Things; a lightbulb switched on from a phone app is an example."
+        },
+        {
+          "id": "r6q5",
+          "question": "What is the correct order of the IoT stages?",
+          "options": ["Cloud → Gateway → Device → Sensors/Actuators", "Gateway → Sensors/Actuators → Cloud → Device", "Sensors/Actuators → Device → Gateway → Cloud", "Device → Cloud → Sensors/Actuators → Gateway"],
+          "correct": 2,
+          "explanation": "Data flows from sensors/actuators to a local processing device, then through a gateway to the network and internet, and finally to the cloud. Each stage adds processing or connectivity before the data is stored and analysed."
+        },
+        {
+          "id": "r6q6",
+          "question": "Which component converts energy into motion to apply a force on something?",
+          "options": ["Sensor", "Actuator", "Gateway", "Router"],
+          "correct": 1,
+          "explanation": "An actuator converts energy into motion, usually to apply a force, such as turning a motor or opening a valve. A sensor does the opposite job: it detects changes and turns a physical phenomenon like temperature into an electric signal."
+        },
+        {
+          "id": "r6q7",
+          "question": "Boards like Arduino and Raspberry Pi play which role in an IoT system?",
+          "options": ["Small programmable devices that get sensor data, process it and send it to the cloud", "Cloud data centres that store all IoT data", "Sensors that only measure temperature", "Satellites that provide internet coverage"],
+          "correct": 0,
+          "explanation": "The device stage uses small programmable boards such as Arduino or Raspberry Pi for local processing. They read data from sensors, process it and forward it towards the cloud via a gateway."
+        },
+        {
+          "id": "r6q8",
+          "question": "Which set of protocols is listed for IoT gateways?",
+          "options": ["SMTP, POP3 and IMAP", "FTP, SSH and Telnet", "BGP, OSPF and RIP", "CoAP, MQTT and HTTP"],
+          "correct": 3,
+          "explanation": "An IoT gateway gathers data from sensors and devices and sends it on using protocols such as CoAP, MQTT and HTTP. MQTT and CoAP are lightweight protocols designed for low-power, constrained IoT devices."
+        },
+        {
+          "id": "r6q9",
+          "question": "Which describes M2M (Machine-to-Machine) communication?",
+          "options": ["Integration of people, processes, data and things", "Networked device-to-cloud communication with human data analysis", "Point-to-point communication between machines with minimal human involvement", "Social media messaging between people"],
+          "correct": 2,
+          "explanation": "M2M is direct, point-to-point communication between machines over links like RFID, Bluetooth or cellular, with minimal human involvement. Examples include smart meters, ATMs and industrial automation."
+        },
+        {
+          "id": "r6q10",
+          "question": "What does the Internet of Everything (IoE) add beyond IoT?",
+          "options": ["It connects people, processes, data and things together", "It removes the need for the internet", "It only connects industrial machines", "It replaces sensors with cameras"],
+          "correct": 0,
+          "explanation": "IoE is a broader concept that integrates people, processes, data and things, combining IoT with AI, big data and human intelligence. Typical IoE use cases include smart cities, intelligent transportation and smart healthcare."
+        }
+      ]
+    }
+  ]
+}

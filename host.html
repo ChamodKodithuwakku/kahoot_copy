@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Host</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script type="module" src="js/host.js"></script>
+</head>
+<body class="host">
+  <header class="topbar" id="topbar" hidden>
+    <div class="brand"><span class="brand-mark" aria-hidden="true">▲◆●■</span> Classroom Quiz</div>
+    <div class="topbar-right">
+      <span class="pill" id="topbar-players" title="Players joined">👥 0</span>
+      <span class="pill pill-code" id="topbar-code"></span>
+      <button class="icon-btn" id="mute-btn" type="button" aria-pressed="false" title="Mute sounds">🔊</button>
+    </div>
+  </header>
+
+  <main class="host-main">
+    <section class="screen" id="boot">
+      <div class="center-stack"><div class="spinner" aria-hidden="true"></div><p class="on-dark">Connecting…</p></div>
+    </section>
+
+    <!-- PIN gate -->
+    <section class="screen" id="pin" hidden>
+      <form class="card narrow" id="pin-form" autocomplete="off">
+        <div class="logo-shapes" aria-hidden="true"><span>▲</span><span>◆</span><span>●</span><span>■</span></div>
+        <h1>Host login</h1>
+        <p class="muted">Enter the host PIN to open the projector screen.</p>
+        <label class="field">
+          <span class="sr-only">Host PIN</span>
+          <input id="pin-input" type="password" inputmode="numeric" placeholder="PIN" required autofocus>
+        </label>
+        <p class="form-error" id="pin-error" role="alert" hidden>Wrong PIN, try again.</p>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Unlock</button>
+      </form>
+    </section>
+
+    <!-- Create / resume -->
+    <section class="screen" id="setup" hidden>
+      <div class="card narrow">
+        <div class="logo-shapes" aria-hidden="true"><span>▲</span><span>◆</span><span>●</span><span>■</span></div>
+        <h1>Ready to play?</h1>
+        <p class="muted" id="bank-summary"></p>
+        <div id="setup-actions">
+          <button class="btn btn-primary btn-lg btn-block" id="create-btn" type="button">Create new game</button>
+          <button class="btn btn-ghost-dark btn-block" id="resume-btn" type="button" hidden></button>
+        </div>
+        <div id="loadq-box" hidden>
+          <p><strong>Couldn't load <code>data/questions.json</code>.</strong> Choose the questions file from this computer:</p>
+          <input type="file" id="loadq-input" accept="application/json,.json">
+          <p class="form-error" id="loadq-error" role="alert" hidden></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lobby -->
+    <section class="screen" id="lobby" hidden>
+      <div class="lobby-grid">
+        <div class="card join-card">
+          <p class="eyebrow">Scan to join</p>
+          <div class="qr" id="qr" role="img" aria-label="QR code to join the game"></div>
+          <p class="join-url" id="join-url"></p>
+          <p class="eyebrow">Game code</p>
+          <p class="game-code" id="lobby-code"></p>
+        </div>
+        <div class="lobby-right">
+          <div class="card players-card">
+            <div class="players-head">
+              <h2>Players</h2>
+              <span class="count-badge" id="player-count">0 / 50</span>
+            </div>
+            <p class="muted waiting-dots" id="players-hint">Waiting for players to join</p>
+            <ul class="chips" id="player-chips"></ul>
+            <p class="muted small" id="kick-hint" hidden>Click a name to remove that player.</p>
+          </div>
+          <div class="card picker-card">
+            <h2>Choose what to play</h2>
+            <div class="round-picker" id="lobby-rounds"></div>
+            <div class="actions">
+              <button class="btn btn-primary btn-lg" id="lobby-start" type="button">Start round</button>
+              <button class="btn btn-ghost-dark" id="lobby-end" type="button">End game</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Question -->
+    <section class="screen" id="question" hidden>
+      <div class="q-head">
+        <div class="q-meta">
+          <span class="pill pill-light" id="q-round"></span>
+          <span class="pill pill-light" id="q-num"></span>
+        </div>
+        <div class="timer" id="q-timer" role="timer" aria-live="off">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="timer-track" cx="50" cy="50" r="44"></circle>
+            <circle class="timer-fill" id="q-timer-fill" cx="50" cy="50" r="44"></circle>
+          </svg>
+          <span class="timer-num" id="q-timer-num">120</span>
+        </div>
+      </div>
+      <div class="card question-card"><h1 id="q-text"></h1></div>
+      <div class="options" id="q-options"></div>
+      <div class="action-bar">
+        <div class="answered"><strong id="q-answered">0</strong> <span id="q-answered-of">answers</span></div>
+        <div class="actions">
+          <button class="btn btn-primary" id="q-skip" type="button">Skip timer / Reveal now</button>
+          <button class="btn btn-ghost" id="q-end" type="button">End game</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reveal -->
+    <section class="screen" id="reveal" hidden>
+      <div class="q-head">
+        <div class="q-meta">
+          <span class="pill pill-light" id="r-round"></span>
+          <span class="pill pill-light" id="r-num"></span>
+        </div>
+        <div class="pill pill-light" id="r-summary"></div>
+      </div>
+      <div class="reveal-grid">
+        <div class="reveal-main">
+          <div class="card question-card compact"><h2 id="r-text"></h2></div>
+          <div class="options revealed" id="r-options"></div>
+          <div class="card explanation">
+            <h3>Why?</h3>
+            <p id="r-expl"></p>
+          </div>
+        </div>
+        <aside class="reveal-side">
+          <div class="card list-card">
+            <h3>Answered correctly <span class="muted small">fastest first</span></h3>
+            <ol class="lb" id="r-correct"></ol>
+          </div>
+          <div class="card list-card">
+            <h3>Top 10</h3>
+            <ol class="lb" id="r-top"></ol>
+          </div>
+        </aside>
+      </div>
+      <div class="action-bar">
+        <div></div>
+        <div class="actions">
+          <button class="btn btn-primary" id="r-next" type="button">Next question</button>
+          <button class="btn btn-ghost" id="r-end" type="button">End game</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Round end -->
+    <section class="screen" id="roundend" hidden>
+      <div class="screen-heading">
+        <h1 id="re-title">Round complete!</h1>
+        <p id="re-sub"></p>
+      </div>
+      <div class="two-col">
+        <div class="card list-card tall">
+          <h3 id="re-round-h">Round leaderboard</h3>
+          <ol class="lb" id="re-round"></ol>
+        </div>
+        <div class="card list-card tall">
+          <h3>Overall leaderboard</h3>
+          <ol class="lb" id="re-overall"></ol>
+        </div>
+      </div>
+      <div class="card picker-card">
+        <h2 id="re-next-h">Up next</h2>
+        <div class="round-picker" id="re-rounds"></div>
+        <div class="actions">
+          <button class="btn btn-primary btn-lg" id="re-start" type="button">Start round</button>
+          <button class="btn btn-ghost-dark" id="re-end" type="button">End game &amp; show winners</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final -->
+    <section class="screen" id="final" hidden>
+      <div class="screen-heading">
+        <h1>🏆 Winners</h1>
+        <p id="final-sub"></p>
+      </div>
+      <div class="podium" id="podium"></div>
+      <div class="card table-card">
+        <div class="table-head">
+          <h2>Final scoreboard</h2>
+          <button class="btn btn-primary" id="csv-btn" type="button">⬇ Export CSV</button>
+        </div>
+        <div class="table-wrap"><table class="score-table" id="final-table"></table></div>
+      </div>
+      <div class="actions center">
+        <button class="btn btn-light" id="new-game-btn" type="button">Start a new game</button>
+        <button class="btn btn-ghost" id="delete-game-btn" type="button">Delete this game's data</button>
+      </div>
+    </section>
+
+    <section class="screen" id="fatal" hidden>
+      <div class="card narrow">
+        <h1>Something went wrong</h1>
+        <p data-msg></p>
+        <button class="btn btn-primary" type="button" onclick="location.reload()">Reload</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
